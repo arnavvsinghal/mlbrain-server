@@ -5,6 +5,7 @@ const handleSigninRequest=(req, res, knex, bcrypt) => {
         email:email
     }).then(data=>{
         const isValid=bcrypt.compareSync(password,data[0].hash);
+        // used to check if password is correct
         if(isValid)
         {
             return knex.select('*').from('users')

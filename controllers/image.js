@@ -1,5 +1,6 @@
 const handleImage=(req, res, knex) => {
     const { id } = req.body;
+    // This has to be learned. Here the funciton updates the entries.
     knex('users').where({
         id: id
     }).increment('entries', 1)
